@@ -1,0 +1,42 @@
+/*
+  Scrum DSL grammar.
+*/
+
+Scrum:
+    projects+=Project
+;
+
+Project:
+    'project' name=ID '{'
+        (sprints+=Sprint|
+        backlog+=Backlog|
+        tasks+=Task)+
+    '}'
+;
+
+Sprint:
+    'sprint' name=ID '{'
+        backlog+=Backlog
+    '}'
+;
+
+Backlog:
+    'backlog' name=ID '{'
+        tasks+=[Task][',']
+    '}'
+;
+
+Task:
+    'task' name=ID '{' 
+        ('state' ':' state=[State]) ','
+        ('description' ':' desc=STRING)
+    '}'
+;
+
+State:
+  'ToDo' | 'InProgess' | 'Done'
+;
+
+Comment:
+  /\/\/.*$/
+;

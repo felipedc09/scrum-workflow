@@ -1,0 +1,32 @@
+project project1 {
+    task Task1 {
+        state : Done,
+        description :   "firts task"
+    }
+
+    task Task2 {
+        state : ToDo,
+        description :   "second task"
+    }
+
+    task Task3 {
+        state : InProgess,
+        description :   "third task"
+    }
+
+    backlog ProductBacklog {
+        Task1,Task2,Task3
+    }
+
+    sprint Sprint1 {
+        backlog SprintBacklog1 {
+            Task1,Task2
+        }
+    }
+
+    sprint Sprint2 {
+        backlog SprintBacklog2 {
+            Task3
+        }
+    }
+}

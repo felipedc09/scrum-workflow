@@ -1,0 +1,40 @@
+
+    digraph xtext {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+4517762576 -> 4517856912 [label="projects:0" arrowtail=diamond dir=both]
+4517856912 -> 4517892240 [label="sprints:0" arrowtail=diamond dir=both]
+4517892240 -> 4517892688 [label="backlog:0" arrowtail=diamond dir=both]
+4517892688 -> 4517855824 [label="tasks:0" ]
+4517855824[label="{Task1:Task|+state:unicode='Done'\l+desc:unicode='firts task'\l}"]
+4517892688 -> 4517855504 [label="tasks:1" ]
+4517855504[label="{Task2:Task|+state:unicode='ToDo'\l+desc:unicode='second task'\l}"]
+4517892688[label="{SprintBacklog1:Backlog|}"]
+4517892240[label="{Sprint1:Sprint|}"]
+4517856912 -> 4517892304 [label="sprints:1" arrowtail=diamond dir=both]
+4517892304 -> 4517892816 [label="backlog:0" arrowtail=diamond dir=both]
+4517892816 -> 4517858576 [label="tasks:0" ]
+4517858576[label="{Task3:Task|+state:unicode='InProgess'\l+desc:unicode='third task'\l}"]
+4517892816[label="{SprintBacklog2:Backlog|}"]
+4517892304[label="{Sprint2:Sprint|}"]
+4517856912 -> 4517892176 [label="backlog:0" arrowtail=diamond dir=both]
+4517892176 -> 4517855824 [label="tasks:0" ]
+4517892176 -> 4517855504 [label="tasks:1" ]
+4517892176 -> 4517858576 [label="tasks:2" ]
+4517892176[label="{ProductBacklog:Backlog|}"]
+4517856912 -> 4517855824 [label="tasks:0" arrowtail=diamond dir=both]
+4517856912 -> 4517855504 [label="tasks:1" arrowtail=diamond dir=both]
+4517856912 -> 4517858576 [label="tasks:2" arrowtail=diamond dir=both]
+4517856912[label="{project1:Project|}"]
+4517762576[label="{:Scrum|}"]
+
+}

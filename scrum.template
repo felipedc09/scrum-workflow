@@ -1,0 +1,19 @@
+<h1>Scrum workflow</h1>
+    <div id="backlog">
+        <h2>{{project.name}}</h2>
+        {% for task in project.tasks %}
+        <div class="task">
+                <h5>{{task.name}}</h5>
+                {{task.state}}</br>
+                {{task.desc}}
+        </div>
+        {% endfor %} 
+    </div> 
+    {% for sprint in project.sprints %}
+    <div class="sprint">
+            <h3>{{sprint.name}}</h3>
+        <div class="backlogSprint">
+                <h4>Sprint backlog</h4>
+        </div>  
+    </div>  
+    {% endfor %} 

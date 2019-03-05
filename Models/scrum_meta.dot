@@ -1,0 +1,58 @@
+
+    digraph xtext {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+140403022559152[ label="{Comment|\\/\\/.*$}"]
+
+140403022538128[ label="{Task|+name:ID\l+state:State\l+desc:STRING\l}"]
+
+140403024136256 -> 140403022503520[arrowtail=diamond, dir=both, headlabel="projects 1..*"]
+140403024136256[ label="{Scrum|}"]
+
+140403022503520 -> 140403022517872[arrowtail=diamond, dir=both, headlabel="sprints 1..*"]
+140403022503520 -> 140403022527616[arrowtail=diamond, dir=both, headlabel="backlog 1..*"]
+140403022503520 -> 140403022538128[arrowtail=diamond, dir=both, headlabel="tasks 1..*"]
+140403022503520[ label="{Project|+name:ID\l}"]
+
+140403022551712[ label="{State|ToDo\|InProgess\|Done}"]
+
+140403022517872 -> 140403022527616[arrowtail=diamond, dir=both, headlabel="backlog 1..*"]
+140403022517872[ label="{Sprint|+name:ID\l}"]
+
+140403022527616 -> 140403022538128[headlabel="tasks 1..*"]
+140403022527616[ label="{Backlog|+name:ID\l}"]
+
+140403025867168[ label="{*OBJECT|}"]
+140403025867168 -> 140403025863568 [dir=back]
+
+140403025844800[ label="{STRING|}"]
+
+140403025863568[ label="{BASETYPE|}"]
+140403025863568 -> 140403025859200 [dir=back]
+140403025863568 -> 140403025848400 [dir=back]
+140403025863568 -> 140403025841968 [dir=back]
+140403025863568 -> 140403025844800 [dir=back]
+
+140403025852000[ label="{INT|}"]
+
+140403025855600[ label="{FLOAT|}"]
+
+140403025859200[ label="{NUMBER|}"]
+140403025859200 -> 140403025855600 [dir=back]
+140403025859200 -> 140403025852000 [dir=back]
+
+140403025848400[ label="{BOOL|}"]
+
+140403025841968[ label="{ID|}"]
+
+
+}
